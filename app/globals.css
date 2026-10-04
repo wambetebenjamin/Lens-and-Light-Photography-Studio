@@ -51,6 +51,7 @@
 
   /* ---- Typography (from @import + h1-h6/p/a rules) ---- */
   --font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-family-display: 'Playfair Display', Georgia, serif;
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
@@ -129,8 +130,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
   color: var(--color-ink);
   line-height: var(--lh-heading);
-  font-family: var(--font-family-base);
+  font-family: var(--font-family-display);
   font-weight: var(--fw-medium);
+  letter-spacing: -0.015em;
   overflow-wrap: normal;
   word-break: normal;
   hyphens: none;

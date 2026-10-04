@@ -33,7 +33,7 @@ export default function PhotographerSection() {
 
         <div className="flex flex-col justify-center gap-6 px-6 py-16 sm:px-12 lg:px-16">
           <p className="section-heading-eyebrow text-white/70">The Photographer</p>
-          <h2 className="text-h2 sm:text-h1 font-medium text-balance">Meet Kiprotich Mwangi</h2>
+          <h2 className="!text-white text-h2 sm:text-h1 font-medium text-balance">Meet Kiprotich Mwangi</h2>
           <p className="text-white/75 max-w-lg">
             Kiprotich founded Lens &amp; Light in 2016 with a single rented camera and a
             conviction that Nairobi deserved photography that felt as warm and layered as

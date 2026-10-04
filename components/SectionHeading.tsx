@@ -18,7 +18,7 @@ export default function SectionHeading({
     <div className={`flex flex-col gap-4 mb-heading-gap max-w-2xl ${alignment}`}>
       <p className={`section-heading-eyebrow ${light ? "text-white/75" : ""}`}>{eyebrow}</p>
       <h2
-        className={`text-h2 sm:text-h1 font-medium text-balance ${light ? "text-white" : "text-ink"}`}
+        className={`text-h2 sm:text-h1 font-medium text-balance ${light ? "!text-white" : "text-ink"}`}
       >
         {title}
       </h2>
