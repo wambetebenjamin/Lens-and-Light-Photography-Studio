@@ -33,6 +33,7 @@ export default function Hero() {
           alt="An East African couple sharing a joyful moment in their wedding portraits, photographed by Lens and Light Photography Studio"
           fill
           priority
+          quality={92}
           sizes="100vw"
           className="object-cover object-[center_25%]"
         />

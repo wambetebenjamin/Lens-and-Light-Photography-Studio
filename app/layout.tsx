@@ -8,6 +8,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import PageTransition from "@/components/PageTransition";
 import { SITE } from "@/lib/data/site";
 
 export const metadata: Metadata = {
@@ -84,7 +85,9 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-surface text-body">
         <JsonLd />
         <Navbar />
-        <main>{children}</main>
+        <main>
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <WhatsAppFloat />
       </body>

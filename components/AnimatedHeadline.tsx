@@ -18,7 +18,8 @@ export default function AnimatedHeadline({
     return () => clearTimeout(t);
   }, []);
 
-  const characters = text.split("");
+  // Animate words, not individual letters: words stay intact at every viewport width.
+  const words = text.split(" ");
 
   if (prefersReduced) {
     return (
@@ -30,20 +31,20 @@ export default function AnimatedHeadline({
 
   return (
     <h1 className={className} aria-label={text}>
-      {characters.map((char, i) => (
+      {words.map((word, i) => (
         <motion.span
-          key={`${char}-${i}`}
+          key={`${word}-${i}`}
           aria-hidden
           initial={{ opacity: 0, y: 14 }}
           animate={started ? { opacity: 1, y: 0 } : {}}
           transition={{
-            duration: 0.5,
+            duration: 0.55,
             ease: [0.22, 1, 0.36, 1],
-            delay: i * 0.06,
+            delay: i * 0.11,
           }}
-          style={{ display: "inline-block", whiteSpace: char === " " ? "pre" : "normal" }}
+          style={{ display: "inline-block", whiteSpace: "nowrap", marginRight: "0.24em" }}
         >
-          {char}
+          {word}
         </motion.span>
       ))}
     </h1>

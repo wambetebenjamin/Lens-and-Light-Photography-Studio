@@ -131,7 +131,24 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--lh-heading);
   font-family: var(--font-family-base);
   font-weight: var(--fw-medium);
-  overflow-wrap: break-word;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+p, li, a, button {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+}
+
+/* Keep editorial headings elegant: balance lines instead of orphaning words. */
+.text-balance {
+  text-wrap: balance;
+}
+
+img {
+  display: block;
 }
 
 a {
