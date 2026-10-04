@@ -1,0 +1,326 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   DESIGN TOKENS
+   Extracted from uploaded source asset: studio-master.zip
+   (Colorlib "Studio - Creative Photography Template")
+   Every color, font, weight, spacing and shadow value below is pulled
+   directly from css/core-style.css, css/responsive.css and style.css
+   inside the uploaded zip. The template's language is a minimal,
+   editorial black / white / grayscale palette with square (non-rounded)
+   buttons, uppercase navigation and generous whitespace — the photographs
+   supply all the color. That language is preserved exactly here.
+   ========================================================================== */
+:root {
+  /* ---- Color palette (from core-style.css) ---- */
+  --color-ink: #1d1d1d;        /* headings, primary buttons, dark surfaces */
+  --color-ink-soft: #222222;   /* scroll-up / secondary dark surface */
+  --color-ink-deep: #101010;   /* deepest overlay */
+  --color-black: #000000;
+
+  --color-body: #838383;       /* paragraph text */
+  --color-muted: #9f9f9f;      /* muted text / outline button */
+  --color-muted-2: #aeaeae;    /* muted outline border */
+  --color-border: #bebebe;     /* borders / rules */
+  --color-border-soft: #dcdcdc;
+  --color-border-softer: #e0e0e0;
+  --color-line: #c0c0c0;
+
+  --color-surface: #ffffff;
+  --color-surface-tint: #f6f6f6;   /* alternating section background */
+  --color-surface-cool: #f2f4f8;   /* preloader / cool background */
+
+  --color-overlay-dark-30: rgba(0, 0, 0, 0.3);
+  --color-overlay-dark-15: rgba(0, 0, 0, 0.15);
+  --color-overlay-dark-50: rgba(0, 0, 0, 0.5);
+  --color-overlay-dark-70: rgba(34, 34, 34, 0.7);
+  --color-overlay-light-90: rgba(255, 255, 255, 0.9);
+  --color-overlay-light-60: rgba(255, 255, 255, 0.6);
+  --color-overlay-light-50: rgba(255, 255, 255, 0.5);
+  --color-overlay-light-20: rgba(255, 255, 255, 0.2);
+
+  /* Brand action color — the template uses near-black (#1d1d1d) as the
+     only "accent", keeping photography as the sole source of color. */
+  --color-accent: var(--color-ink);
+  --color-accent-contrast: #ffffff;
+  /* WhatsApp brand green used ONLY for the floating WhatsApp affordance,
+     kept subtle/secondary to the ink brand color used everywhere else. */
+  --color-whatsapp: #25d366;
+
+  /* ---- Typography (from @import + h1-h6/p/a rules) ---- */
+  --font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-nav: 13px;         /* spec: navigation 13px */
+  --fs-button: 12px;      /* spec: buttons 12px */
+  --fs-caption: 12px;
+  --fs-small: 13px;
+  --fs-body: 15px;        /* core-style.css p { font-size: 15px } */
+  --fs-base: 16px;
+  --fs-h6: 18px;
+  --fs-h5: 20px;
+  --fs-h4: 24px;
+  --fs-h3: 30px;
+  --fs-h2: 36px;
+  --fs-h1: 48px;
+  --fs-display-sm: 60px;
+  --fs-display: 100px;    /* .slide-text span { font-size: 100px } */
+
+  --lh-heading: 1.2;
+  --lh-body: 2;           /* core-style.css p { line-height: 2 } */
+  --lh-tight: 1;
+
+  /* ---- Spacing scale (from .section_padding_* utilities) ---- */
+  --space-section: 100px;
+  --space-section-sm: 50px;
+  --space-heading-gap: 50px;
+  --space-xs: 8px;
+  --space-sm: 15px;
+  --space-md: 25px;
+  --space-lg: 30px;
+  --space-xl: 45px;
+
+  /* ---- Radius (template is almost entirely square-edged) ---- */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-pill: 30px;
+  --radius-circle: 50%;
+
+  /* ---- Shadows (exact values from core-style.css) ---- */
+  --shadow-sm: 0 2px 6px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 5px 40px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 5px 50px rgba(0, 0, 0, 0.15);
+
+  /* ---- Motion (from spec's ANIMATION DIRECTION) ---- */
+  --ease-refined: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-hover: 250ms;
+  --duration-char: 0.06s;
+  --duration-crossfade: 800ms;
+
+  --container-max: 1440px;
+  --header-height: 96px;
+  --header-height-mobile: 72px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--color-body);
+  background: var(--color-surface);
+  font-family: var(--font-family-base);
+  font-weight: var(--fw-regular);
+  overflow-x: hidden;
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-ink);
+  line-height: var(--lh-heading);
+  font-family: var(--font-family-base);
+  font-weight: var(--fw-medium);
+  overflow-wrap: break-word;
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: color var(--duration-hover) var(--ease-refined),
+    background-color var(--duration-hover) var(--ease-refined),
+    opacity var(--duration-hover) var(--ease-refined),
+    transform var(--duration-hover) var(--ease-refined);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.container-max {
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Square, uppercase primary button in the exact language of studio-btn */
+.btn-studio {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-ink);
+  color: #fff;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-none);
+  font-size: var(--fs-button);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  border: 1px solid var(--color-ink);
+  transition: all var(--duration-hover) var(--ease-refined);
+  white-space: nowrap;
+}
+.btn-studio:hover {
+  background-color: #fff;
+  color: var(--color-ink);
+}
+
+.btn-studio-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--color-ink);
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-none);
+  font-size: var(--fs-button);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  border: 1px solid var(--color-ink);
+  transition: all var(--duration-hover) var(--ease-refined);
+  white-space: nowrap;
+}
+.btn-studio-outline:hover {
+  background-color: var(--color-ink);
+  color: #fff;
+}
+
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--color-whatsapp);
+  color: #fff;
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-none);
+  font-size: var(--fs-button);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: var(--fw-medium);
+  transition: all var(--duration-hover) var(--ease-refined);
+  white-space: nowrap;
+}
+.btn-whatsapp:hover {
+  filter: brightness(0.92);
+}
+
+.section-heading-eyebrow {
+  font-size: var(--fs-nav);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-body);
+  font-weight: var(--fw-medium);
+}
+
+.hairline {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-ink);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-section: 64px;
+    --fs-h1: 36px;
+    --fs-display: 56px;
+    --fs-display-sm: 40px;
+  }
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+.animate-whatsapp-pulse {
+  animation: whatsapp-pulse 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.4s ease-in-out infinite;
+}
+
+@keyframes bts-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-bts-scroll {
+  animation: bts-scroll 40s linear infinite;
+}
+
+.form-input {
+  width: 100%;
+  height: 50px;
+  padding: 0 16px;
+  border: 1px solid var(--color-border-softer);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--fs-body);
+  font-family: var(--font-family-base);
+  transition: border-color var(--duration-hover) var(--ease-refined);
+}
+textarea.form-input {
+  height: auto;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-ink);
+}
+.form-input::placeholder {
+  color: var(--color-muted);
+}
+
+.prose-studio h2 {
+  font-size: var(--fs-h3);
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+}
+.prose-studio p {
+  margin-bottom: 1.5em;
+}
+.prose-studio ul {
+  list-style: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
