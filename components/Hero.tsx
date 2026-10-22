@@ -32,7 +32,7 @@ export default function Hero() {
             >
               <span aria-hidden className="h-px w-8 shrink-0 bg-white/70 md:w-12" />
               <p className="section-heading-eyebrow text-white/95 [text-shadow:0_1px_14px_rgba(0,0,0,0.9)]">
-                Nairobi, Kenya — Photography &amp; Videography
+                Nairobi, Kenya · Photography &amp; Videography
               </p>
             </motion.div>
 
@@ -48,7 +48,7 @@ export default function Hero() {
               transition={{ delay: 0.8, duration: 0.7, ease: EASE }}
               className="mt-5 hidden max-w-xl text-white/90 text-body leading-relaxed [text-shadow:0_1px_18px_rgba(0,0,0,0.95)] sm:block md:mt-6"
             >
-              Weddings, portraits, brands and events — photographed across
+              Weddings, portraits, brands and events. Photographed across
               Kenya with a calm, editorial eye.
             </motion.p>
 
