@@ -31,8 +31,8 @@ export default function AnimatedHeadline({
         {words.map((word, i) => (
           <Fragment key={`${word}-${i}`}>
             <span
-              className={`hero-reveal-word ${
-                emphasis.includes(word) ? "hero-title-emphasis" : ""
+              className={`hero-reveal-word${
+                emphasis.includes(word) ? " hero-title-emphasis" : ""
               }`}
               style={{ animationDelay: `${(0.14 + i * 0.075).toFixed(3)}s` }}
             >
