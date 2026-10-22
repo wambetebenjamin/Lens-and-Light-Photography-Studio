@@ -276,6 +276,55 @@ a {
   animation: bounce-slow 2.4s ease-in-out infinite;
 }
 
+/* Hero slideshow — slow cinematic push on the active photograph. Long and
+   gentle on purpose: it should read as a camera move, not a zoom effect. */
+@keyframes hero-ken-burns {
+  from { transform: scale(1.01) translate3d(0, 0, 0); }
+  to { transform: scale(1.09) translate3d(0, -1.2%, 0); }
+}
+.animate-hero-ken-burns {
+  animation: hero-ken-burns 14s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: center 45%;
+  will-change: transform;
+}
+
+/* Fills the active slide indicator over the autoplay interval. */
+@keyframes hero-slide-progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* ---------------------------------------------------------------------------
+   HERO LEGIBILITY SCRIMS
+   Three stacked layers, tuned so white type stays high-contrast on every
+   photograph without dulling the image: a light even veil for overall
+   contrast, a top wash for the navigation, and a bottom-weighted gradient
+   that anchors the headline block.
+   ------------------------------------------------------------------------- */
+.hero-scrim-veil {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-scrim-top {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.hero-scrim-bottom {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.97) 0%,
+    rgba(0, 0, 0, 0.88) 14%,
+    rgba(0, 0, 0, 0.55) 38%,
+    rgba(0, 0, 0, 0.18) 62%,
+    rgba(0, 0, 0, 0) 78%
+  );
+}
+
 @keyframes bts-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
