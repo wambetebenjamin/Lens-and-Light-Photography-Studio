@@ -9,9 +9,18 @@ images were used for people-focused content.
 
 Format: `local file` — short description — Pexels photo reference.
 
-## Hero
-- `public/images/hero/hero-wedding.jpg` — Couple embracing in a garden wedding shoot — https://www.pexels.com/photo/11632772/
-- `public/images/hero/hero-portrait-maasai.jpg` — Portrait of a Maasai man in traditional dress, Kenya — https://www.pexels.com/photo/4314678/
+## Hero (rotating slideshow)
+All five are genuine, un-retouched photographic originals downloaded at full
+resolution (1800–2400px on the long edge) from the photographers' Unsplash
+pages — **no AI-generated imagery**. Portraits are of African / East African
+subjects, per the brand brief.
+
+- `public/images/hero/slide-01-wedding.jpg` — Bride and groom embracing beneath a flowering bougainvillea — Samwel Francis, https://unsplash.com/photos/a-bride-and-groom-embracing-under-a-tree-OyhCn_7YoQo
+- `public/images/hero/slide-02-culture.jpg` — Samburu woman in beaded regalia, northern Kenya — Jason Hafso, https://unsplash.com/@jasonhafso
+- `public/images/hero/slide-03-couples.jpg` — Couple laughing in a garden, pre-wedding portraits — Dwayne Joe, https://unsplash.com/@spliff_dj_joe
+- `public/images/hero/slide-04-portrait.jpg` — Fashion portrait, Maasai-inspired beading and parasol — Jason Hafso, https://unsplash.com/@jasonhafso
+- `public/images/hero/slide-05-golden-hour.jpg` — Couple silhouetted at golden hour — https://unsplash.com/photos/couple-lovingly-silhouetted-against-a-sunset-ZuXZd20Gd1Q
+- `public/images/hero/hero-og.jpg` — 1200×630 social share crop derived from `slide-01-wedding.jpg`
 
 ## Portfolio — Portraits
 - `portfolio/portraits-1.jpg` — Maasai man portrait, Kenya — https://www.pexels.com/photo/4314678/
@@ -102,10 +111,12 @@ Format: `local file` — short description — Pexels photo reference.
 
 ---
 
-**Note on sourcing method:** images were located via Pexels search and saved
-at the resolution made available through the research tooling used to build
-this project (web-standard display resolution, typically 500–800px on the
-long edge). Before a production launch, swap these for full-resolution
+**Note on sourcing method:** the hero slideshow uses full-resolution
+original downloads (1800–2400px long edge, 170–820 KB each) and is rendered
+through `next/image`, which generates responsive AVIF/WebP derivatives at
+request time. The remaining section images were located via Pexels search and
+saved at the resolution made available through the research tooling used to
+build this project (web-standard display resolution, typically 500–800px on
+the long edge). Before a production launch, swap those for full-resolution
 downloads of the same (or newer) Pexels/Unsplash photographs, or replace
-with the studio's own commissioned photography, via Cloudinary/Vercel Blob
-as wired up in `lib/images.ts`.
+with the studio's own commissioned photography.

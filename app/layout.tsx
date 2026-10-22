@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: SITE.description,
     url: SITE.url,
     siteName: SITE.name,
-    images: [{ url: "/images/hero/hero-wedding.jpg", width: 1200, height: 1500 }],
+    images: [{ url: "/images/hero/hero-og.jpg", width: 1200, height: 630 }],
     locale: "en_KE",
     type: "website",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE.name} | Photography & Videography in Nairobi, Kenya`,
     description: SITE.description,
-    images: ["/images/hero/hero-wedding.jpg"],
+    images: ["/images/hero/hero-og.jpg"],
   },
 };
 
@@ -51,7 +51,7 @@ function JsonLd() {
         "@id": `${SITE.url}/#business`,
         name: SITE.name,
         description: SITE.description,
-        image: `${SITE.url}/images/hero/hero-wedding.jpg`,
+        image: `${SITE.url}/images/hero/hero-og.jpg`,
         url: SITE.url,
         telephone: SITE.phone,
         email: SITE.email,

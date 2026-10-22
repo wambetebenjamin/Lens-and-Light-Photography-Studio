@@ -50,8 +50,18 @@ export default function Navbar() {
           scrolled ? "bg-surface/95 backdrop-blur shadow-sm" : "bg-transparent"
         }`}
       >
+        {/* Guarantees contrast for the white navigation over any photograph:
+            it fades in with the transparent header and out again on scroll,
+            when the bar turns solid. */}
+        <div
+          aria-hidden
+          className={`pointer-events-none absolute inset-x-0 top-0 h-[116px] lg:h-[152px] hero-nav-scrim transition-opacity duration-500 ease-refined ${
+            isDarkHero ? "opacity-100" : "opacity-0"
+          }`}
+        />
+
         <nav
-          className={`container-max h-full flex items-center justify-between px-5 md:px-10 ${
+          className={`container-max relative h-full flex items-center justify-between px-5 md:px-10 ${
             isDarkHero ? "text-white" : "text-ink"
           }`}
         >
