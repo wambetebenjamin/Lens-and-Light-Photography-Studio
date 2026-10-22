@@ -15,17 +15,17 @@ export default function Hero() {
       <HeroSlideshow>
         {/*
           Bottom-left editorial block. The photographs are framed so their
-          subjects sit in the upper two-thirds and the scrim darkens the lower
-          third, which keeps this type crisp on every single slide.
+          subjects sit in the upper half and the scrim darkens the lower third
+          plus the left edge, which keeps this type crisp on every slide.
         */}
-        <div className="relative z-10 h-full flex flex-col justify-end text-left px-5 sm:px-8 md:px-10 pb-24 md:pb-28">
-          <div className="max-w-[min(100%,860px)]">
+        <div className="relative z-10 h-full w-full flex flex-col justify-end text-left px-5 sm:px-8 md:px-10 pb-20 md:pb-24">
+          <div className="max-w-[min(100%,940px)]">
             <p className="section-heading-eyebrow text-white/95 mb-4 md:mb-5 [text-shadow:0_1px_14px_rgba(0,0,0,0.9)]">
               Nairobi, Kenya — Photography &amp; Videography
             </p>
             <AnimatedHeadline
               text="We Capture Moments That Last."
-              className="text-white font-medium leading-[1.1] text-[34px] xs:text-[38px] sm:text-[46px] md:text-[58px] lg:text-[68px] xl:text-[76px] tracking-tight text-balance [text-shadow:0_2px_30px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)]"
+              className="text-white font-medium leading-[1.1] text-[28px] xs:text-[31px] sm:text-[42px] md:text-[52px] lg:text-[60px] xl:text-[66px] tracking-tight text-balance [text-shadow:0_2px_30px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)]"
             />
             <p className="hidden sm:block mt-5 max-w-xl text-white/90 text-body leading-relaxed [text-shadow:0_1px_18px_rgba(0,0,0,0.95)]">
               Weddings, portraits, brands and events — photographed across
@@ -38,7 +38,7 @@ export default function Hero() {
             >
               <a
                 href="#portfolio"
-                className="btn-studio-outline mt-8 md:mt-9 border-white bg-black/25 text-white backdrop-blur-[2px] hover:bg-white hover:text-ink"
+                className="btn-studio-outline mt-7 md:mt-8 border-white bg-black/25 text-white backdrop-blur-[2px] hover:bg-white hover:text-ink"
               >
                 See Our Work
               </a>
