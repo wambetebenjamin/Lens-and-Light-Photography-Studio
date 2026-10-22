@@ -155,8 +155,9 @@ export default function HeroSlideshow({ children }: Props) {
         Legibility system — stacked, deliberately gentle layers so the headline
         stays crisp on every photograph without flattening the image:
         1. an even veil that holds contrast on bright skies and white dresses
-        2. a top-down gradient so the navigation stays readable
+        2. a top wash, continued by the header's own scrim
         3. a bottom-weighted gradient behind the headline and CTA
+        4. an elliptical corner falloff under the type block itself
       */}
       <div aria-hidden className="absolute inset-0 hero-scrim-veil" />
       <div aria-hidden className="absolute inset-0 hero-scrim-top" />
@@ -166,6 +167,9 @@ export default function HeroSlideshow({ children }: Props) {
       {/* ...and this one holds contrast on the left, where the type lives,
           instead of flattening the whole photograph. */}
       <div aria-hidden className="absolute inset-0 hero-scrim-side" />
+      {/* The last pass, anchored to the bottom-left corner, so the darkest
+          pixels land exactly under the headline rather than across the frame. */}
+      <div aria-hidden className="absolute inset-0 hero-scrim-corner" />
 
       {children}
 

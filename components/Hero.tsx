@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import AnimatedHeadline from "@/components/AnimatedHeadline";
 import HeroAperture from "@/components/HeroAperture";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import { whatsappLink } from "@/lib/data/site";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
   return (
@@ -15,33 +18,64 @@ export default function Hero() {
       <HeroSlideshow>
         {/*
           Bottom-left editorial block. The photographs are framed so their
-          subjects sit in the upper half and the scrim darkens the lower third
-          plus the left edge, which keeps this type crisp on every slide.
+          subjects sit in the upper half, and the scrim system darkens the
+          lower corner plus the top band — which keeps this type crisp on
+          every slide of the rotation.
         */}
-        <div className="relative z-10 h-full w-full flex flex-col justify-end text-left px-5 sm:px-8 md:px-10 pb-20 md:pb-24">
-          <div className="max-w-[min(100%,940px)]">
-            <p className="section-heading-eyebrow text-white/95 mb-4 md:mb-5 [text-shadow:0_1px_14px_rgba(0,0,0,0.9)]">
-              Nairobi, Kenya — Photography &amp; Videography
-            </p>
+        <div className="relative z-10 flex h-full w-full flex-col justify-end px-5 pb-20 text-left sm:px-8 md:px-10 md:pb-24">
+          <div className="max-w-[min(100%,1000px)]">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: EASE, delay: 0.05 }}
+              className="mb-5 flex items-center gap-3 md:mb-6 md:gap-4"
+            >
+              <span aria-hidden className="h-px w-8 shrink-0 bg-white/70 md:w-12" />
+              <p className="section-heading-eyebrow text-white/95 [text-shadow:0_1px_14px_rgba(0,0,0,0.9)]">
+                Nairobi, Kenya — Photography &amp; Videography
+              </p>
+            </motion.div>
+
             <AnimatedHeadline
               text="We Capture Moments That Last."
-              className="text-white font-medium leading-[1.1] text-[28px] xs:text-[31px] sm:text-[42px] md:text-[52px] lg:text-[60px] xl:text-[66px] tracking-tight text-balance [text-shadow:0_2px_30px_rgba(0,0,0,0.85),0_1px_3px_rgba(0,0,0,0.6)]"
+              emphasis={["Last."]}
+              className="hero-title text-white"
             />
-            <p className="hidden sm:block mt-5 max-w-xl text-white/90 text-body leading-relaxed [text-shadow:0_1px_18px_rgba(0,0,0,0.95)]">
+
+            <motion.p
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.7, ease: EASE }}
+              className="mt-5 hidden max-w-xl text-white/90 text-body leading-relaxed [text-shadow:0_1px_18px_rgba(0,0,0,0.95)] sm:block md:mt-6"
+            >
               Weddings, portraits, brands and events — photographed across
               Kenya with a calm, editorial eye.
-            </p>
+            </motion.p>
+
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 1.15, duration: 0.6, ease: EASE }}
+              className="mt-7 flex flex-wrap items-center gap-3 md:mt-9 md:gap-4"
             >
-              <a
-                href="#portfolio"
-                className="btn-studio-outline mt-7 md:mt-8 border-white bg-black/25 text-white backdrop-blur-[2px] hover:bg-white hover:text-ink"
-              >
+              <a href="#portfolio" className="hero-btn hero-btn-solid">
                 See Our Work
               </a>
+              <span className="hidden sm:block">
+                <a
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hero-btn hero-btn-ghost"
+                >
+                  Book a Session
+                  <ArrowRight
+                    aria-hidden
+                    className="hero-btn-arrow h-4 w-4"
+                    strokeWidth={1.5}
+                  />
+                </a>
+              </span>
             </motion.div>
           </div>
         </div>
